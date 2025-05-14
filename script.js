@@ -84,5 +84,4 @@ function limpiarFormulario() {
   document.getElementById("formReserva").reset();
 }
 
-// Inicial
 mostrarReservas();
