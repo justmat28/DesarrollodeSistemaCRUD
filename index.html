@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Reservas Culturales</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header bg-info text-white">
+      <h4>Formulario de Reserva - Actividades Culturales</h4>
+    </div>
+    <div class="card-body">
+      <form id="formReserva" class="row g-3">
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre Completo</label>
+          <input type="text" id="nombre" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="matricula" class="form-label">Código de Matrícula</label>
+          <input type="text" id="matricula" class="form-control" maxlength="8" pattern="[A-Za-z0-9]{8}" required>
+        </div>
+        <div class="col-md-6">
+          <label for="actividad" class="form-label">Actividad Cultural</label>
+          <select id="actividad" class="form-select" required>
+            <option value="">Seleccionar...</option>
+            <option value="Teatro">Teatro</option>
+            <option value="Taller de Dibujo">Taller de Dibujo</option>
+            <option value="Club de Lectura">Club de Lectura</option>
+            <option value="Excursión Cultural">Excursión Cultural</option>
+            <option value="Taller de guitarra">Taller de Guitarra</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="fecha" class="form-label">Fecha</label>
+          <input type="date" id="fecha" class="form-control" required>
+        </div>
+        <div class="col-12">
+          <button type="button" onclick="registrarReserva()" class="btn btn-success">Registrar</button>
+          <button type="button" onclick="cancelarEdicion()" class="btn btn-secondary" id="cancelarBtn" style="display:none;">Cancelar Edición</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card mt-4">
+    <div class="card-header bg-secondary text-white">
+      <h5>Lista de Reservas</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Nombre</th>
+            <th>Matrícula</th>
+            <th>Actividad</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaReservas"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
